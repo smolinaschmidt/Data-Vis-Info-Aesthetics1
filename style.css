@@ -1,0 +1,168 @@
+body {
+    font-family: 'Netflix Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #141414; 
+    color: #E5E5E5; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+.view {
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.landing-container {
+    text-align: center;
+    max-width: 800px;
+    background-color: #1a1a1a;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    padding: 60px 40px;
+}
+
+.main-title {
+    font-size: 4.5em;
+    font-weight: 700;
+    color: #E50914;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.main-title .highlight {
+    color: #E5E5E5;
+}
+
+.description {
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin-bottom: 40px;
+    color: #B3B3B3;
+}
+
+.explore-button {
+    background-color: #E50914;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.3em;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    margin-top: 20px;
+}
+
+.explore-button:hover {
+    background-color: #F40612;
+    transform: translateY(-2px);
+}
+
+.chart-container {
+    max-width: 1200px;
+
+}
+
+.chart-title {
+    font-size: 2.5em;
+    font-weight: 700;
+    color: #E50914;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+#chart-wrapper {
+    width: 100%;
+    max-width: 1160px; 
+    height: 700px; 
+    overflow-y: scroll; 
+    background-color: #1a1a1a;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    padding: 20px 0; 
+}
+
+#bubble-chart {
+    width: 100%; 
+    height: auto; 
+    display: block; 
+    margin: 0;
+    padding: 0;
+}
+
+#filter-controls {
+    margin-bottom: 20px;
+    display: flex;
+    gap: 20px; 
+    align-items: center;
+}
+
+#filter-controls label {
+    font-weight: 400; 
+    color: #B3B3B3;
+    margin-left: 10px;
+}
+
+.filter-button {
+    background-color: #333;
+    color: #E5E5E5;
+    padding: 8px 15px;
+    border: 1px solid #555;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.2s, border-color 0.2s;
+    font-weight: 400; 
+}
+
+.filter-button:hover {
+    background-color: #555;
+}
+
+.filter-button.active {
+    background-color: #E50914;
+    border-color: #E50914;
+    font-weight: 700;
+}
+
+#global-filter, #series-search {
+    background-color: #333;
+    color: #E5E5E5;
+    padding: 8px 15px;
+    border: 1px solid #555;
+    border-radius: 5px;
+    font-size: 1em;
+    box-sizing: border-box;
+}
+
+#series-search {
+    width: 250px;
+}
+
+.tooltip {
+    position: absolute;
+    text-align: left;
+    padding: 8px;
+    font-size: 14px;
+    background: rgba(30, 30, 30, 0.9);
+    border: 1px solid #E50914;
+    border-radius: 5px;
+    pointer-events: none;
+    color: #E5E5E5;
+    z-index: 10;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+}

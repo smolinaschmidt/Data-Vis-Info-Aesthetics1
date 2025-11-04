@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix Series Explorer</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Netflix+Sans:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div id="landing-page" class="view landing-container">
+        <h1 class="main-title">Netflix <span class="highlight">Series</span> Explorer</h1>
+        <p class="description">
+            Explore 294 series across up to 28 seasons, comparing viewership and global availability. Use the scrollbar to view all series names clearly.
+        </p>
+        <button class="explore-button" onclick="showChart()">Explore Data</button>
+    </div>
+
+    <div id="chart-page" class="view chart-container hidden">
+        <h1 class="chart-title">Season Viewership Comparison</h1>
+        
+        <div id="filter-controls">
+            <button class="filter-button active" id="all-filter-button" onclick="updateChart('GlobalFilter', 'All', this)">All Series</button>
+
+            <label for="global-filter">Available Globally:</label>
+            <select id="global-filter" onchange="updateChart('GlobalFilter', this.value)">
+                <option value="All">All Statuses</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+            
+            <label for="series-search">Search Series:</label>
+            <input type="text" id="series-search" placeholder="E.g., Doctor X, Fast & Furious" onkeyup="updateChart('Search', this.value)">
+        </div>
+
+        <div id="chart-wrapper"> 
+            <div id="bubble-chart"></div>
+        </div>
+        
+        <button id="floating-back-button" class="explore-button hidden" onclick="showLanding()">
+            ← Back to Home
+        </button>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
