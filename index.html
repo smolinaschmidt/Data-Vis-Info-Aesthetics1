@@ -22,7 +22,9 @@
         <h1 class="chart-title">Season Viewership Comparison</h1>
         
         <div id="filter-controls">
-            <button class="filter-button active" id="all-filter-button" onclick="updateChart('GlobalFilter', 'All', this)">All Series</button>
+            
+            <label for="series-search">Search Series:</label>
+            <input type="text" id="series-search" placeholder="E.g., Doctor X, Fast & Furious" onkeyup="updateChart('Search', this.value)">
 
             <label for="global-filter">Available Globally:</label>
             <select id="global-filter" onchange="updateChart('GlobalFilter', this.value)">
@@ -30,9 +32,8 @@
                 <option value="Yes">Yes</option>
                 <option value="No">No</option>
             </select>
-            
-            <label for="series-search">Search Series:</label>
-            <input type="text" id="series-search" placeholder="E.g., Doctor X, Fast & Furious" onkeyup="updateChart('Search', this.value)">
+
+            <button class="filter-button active" id="all-filter-button" onclick="updateChart('GlobalFilter', 'All', this)">All Series</button>
         </div>
 
         <div id="chart-wrapper"> 
